@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback form</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="form_container">
+      <div class="logo_wrapper">
+        <img src="images/logo.png" alt />
+      </div>
+      <% if(screen=='success') { %>
+      <div class="success-container">
+        <h1>Success!</h1>
+        <p>Your action was successful.</p>
+      </div>
+      <% }else if(screen == 'error') { %>
+      <div class="error-container">
+        <span class="error-icon">!</span>
+        <h1>ERROR</h1>
+        <p>The phone number is invalid. Please check and try again.</p>
+      </div>
+      <% }else { %>
+      <form
+        action="http://localhost:5000/contact-form/v1.0/add-record"
+        method="post"
+      >
+        <h1 class="form_title">Feedback Form</h1>
+        <div class="form_field">
+          <label for="name">Name</label>
+          <input type="text" name="name" required />
+        </div>
+        <div class="form_field">
+          <label for="number">Number</label>
+          <input type="text" name="phone" />
+        </div>
+        <div class="form_field">
+          <label for="email">Email</label>
+          <input type="email" name="email" required />
+        </div>
+        <div class="form_field">
+          <label for="relation">Relation</label>
+          <select name="relation" id="relation">
+            <option value="select" disabled selected>select</option>
+            <option value="Father">Father</option>
+            <option value="Mother">Mother</option>
+            <option value="Son">Son</option>
+            <option value="Daughter">Daughter</option>
+            <option value="Daughter">Wife</option>
+            <option value="Daughter">Sister</option>
+            <option value="Daughter">Brother</option>
+          </select>
+        </div>
+        <div class="form_field">
+          <label for="occasion">occasion</label>
+          <select name="occasion" id="occasion">
+            <option value="select" disabled selected>select</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Anniversary">Anniversary</option>
+            <option value="Festival">Festival</option>
+            <option value="Engagement Party">Engagement Party</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <button type="submit" name="submit">Submit</button>
+      </form>
+      <% } %>
+    </div>
+  </body>
+</html>
