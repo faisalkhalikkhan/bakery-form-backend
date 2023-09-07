@@ -1,12 +1,10 @@
+require('dotenv/config')
 const express = require("express");
 const cors = require("cors");
 const session = require("express-session");
 const mongooes = require("mongoose");
-
 const port = process.env.PORT || 5000;
-const DBCONNECTION =
-  "mongodb+srv://mustafabharmal10:mustafabharmal10@cluster0.fkm4fto.mongodb.net/?retryWrites=true&w=majority";
-
+const DBCONNECTION = process.env.DB_URI
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: "50mb", extended: true }));
