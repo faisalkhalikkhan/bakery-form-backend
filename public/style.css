@@ -75,7 +75,7 @@ body {
   gap: 20px;
 }
 
-.form_container form button {
+button {
   background-color: #420d09;
   color: white;
   width: fit-content;
@@ -86,8 +86,7 @@ body {
   margin-top: 20px;
   cursor: pointer;
 }
-
-.form_container form button:hover {
+button:hover {
   background-color: white;
   color: #420d09;
   outline: 2px solid #420d09;

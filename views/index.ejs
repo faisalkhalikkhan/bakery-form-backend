@@ -15,16 +15,18 @@
       <div class="success-container">
         <h1>Success!</h1>
         <p>Your action was successful.</p>
+        <button onclick="moveBack()">Add Another Entry</button>
       </div>
       <% }else if(screen == 'error') { %>
       <div class="error-container">
         <span class="error-icon">!</span>
         <h1>ERROR</h1>
         <p>The phone number is invalid. Please check and try again.</p>
+        <button onclick="moveBack()">Add Another Entry</button>
       </div>
       <% }else { %>
       <form 
-        action="https://bakery-form-backend-production.up.railway.app/contact-form/v1.0/add-record"
+        action="http://localhost:5000/contact-form/v1.0/add-record"
         method="post"
       >
         <h1 class="form_title">Feedback Form</h1>
@@ -33,7 +35,7 @@
           <input type="text" name="name" required />
         </div>
         <div class="form_field">
-          <label for="number">Number</label>
+          <label for="phone">Phone</label>
           <input type="text" name="phone" />
         </div>
         <div class="form_field">
@@ -69,4 +71,12 @@
       <% } %>
     </div>
   </body>
+  <script>
+    const moveBack = () => {
+      window.location.href = "http://localhost:5000"
+      setTimeout(function () {
+        location.reload();
+      }, 2000);
+    }
+  </script>
 </html>
