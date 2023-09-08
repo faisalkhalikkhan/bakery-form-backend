@@ -7,7 +7,6 @@ const mongooes = require("mongoose");
 
 const port = process.env.PORT || 5000;
 const DBCONNECTION = process.env.DB_URI
-// const DBCONNECTION = "mongodb+srv://ezzybakery53:Ezzybakery53@cluster0.bnxmvpq.mongodb.net/?retryWrites=true&w=majority"
 
 const app = express();
 
